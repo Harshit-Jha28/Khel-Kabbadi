@@ -1,7 +1,13 @@
 import Phaser from "phaser";
+
 import CourtRenderer from "../renderers/CourtRenderer";
+import Player from "../objects/Player";
+import InputManager from "../input/InputManager";
+import PlayerController from "../controllers/PlayerController";
 
 export default class MatchScene extends Phaser.Scene {
+
+    private controller!: PlayerController;
 
     constructor() {
         super("MatchScene");
@@ -9,19 +15,28 @@ export default class MatchScene extends Phaser.Scene {
 
     create(): void {
 
-        const court = new CourtRenderer(this);
+        const renderer = new CourtRenderer(this);
+        renderer.render();
 
-        court.render();
-
-        this.add.text(
-            30,
-            30,
-            "Khel-Kabbadi Prototype",
-            {
-                fontSize: "32px",
-                color: "#ffffff"
-            }
+        const player = new Player(
+            this,
+            960,
+            540
         );
+
+        const input = new InputManager(this);
+
+        this.controller = new PlayerController(
+            player,
+            input
+        );
+
+    }
+
+    update(): void {
+
+        this.controller.update();
+
     }
 
 }

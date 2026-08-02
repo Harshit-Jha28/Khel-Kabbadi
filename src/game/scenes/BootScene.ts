@@ -8,6 +8,11 @@ export default class BootScene extends Phaser.Scene {
 
     preload(): void {
 
+        this.load.image(
+            "player",
+            "src/assets/sprites/player.png"
+        );
+
     }
 
     create(): void {
