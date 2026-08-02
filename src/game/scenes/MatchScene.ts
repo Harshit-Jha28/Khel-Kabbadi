@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import CourtRenderer from "../renderers/CourtRenderer";
 
 export default class MatchScene extends Phaser.Scene {
 
@@ -8,18 +9,19 @@ export default class MatchScene extends Phaser.Scene {
 
     create(): void {
 
-        this.cameras.main.setBackgroundColor("#1b4d9b");
+        const court = new CourtRenderer(this);
+
+        court.render();
 
         this.add.text(
-            40,
-            40,
-            "Kabaddi Engine v1",
+            30,
+            30,
+            "Khel-Kabbadi Prototype",
             {
-                fontSize: "42px",
+                fontSize: "32px",
                 color: "#ffffff"
             }
         );
-
     }
 
 }
