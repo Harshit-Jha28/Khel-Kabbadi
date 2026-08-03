@@ -14,12 +14,20 @@ export default class CourtRenderer {
 
         const g = this.scene.add.graphics();
 
-        const courtX = (GameConfig.WIDTH - CourtConfig.WIDTH) / 2;
-        const courtY = (GameConfig.HEIGHT - CourtConfig.HEIGHT) / 2;
+       const courtX =
+    (GameConfig.WORLD_WIDTH - CourtConfig.WIDTH) / 2;
+
+const courtY =
+    (GameConfig.WORLD_HEIGHT - CourtConfig.HEIGHT) / 2;
 
         // Background
         g.fillStyle(CourtConfig.BACKGROUND_COLOR);
-        g.fillRect(0, 0, GameConfig.WIDTH, GameConfig.HEIGHT);
+       g.fillRect(
+    0,
+    0,
+    GameConfig.WORLD_WIDTH,
+    GameConfig.WORLD_HEIGHT
+);
 
         // Court
         g.fillStyle(CourtConfig.COURT_COLOR);

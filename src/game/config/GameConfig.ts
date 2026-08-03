@@ -1,14 +1,16 @@
 const GameConfig = {
 
-    WIDTH: 1920,
+    // Screen (phone resolution)
+    WIDTH: 1280,
+    HEIGHT: 720,
 
-    HEIGHT: 1080,
+    // World size
+    WORLD_WIDTH: 2200,
+    WORLD_HEIGHT: 1400,
 
     BACKGROUND_COLOR: "#1b4d9b",
 
-    FPS: 60,
-
-    DEBUG: false,
+    DEBUG: false
 
 };
 
