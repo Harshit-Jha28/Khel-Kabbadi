@@ -3,33 +3,54 @@ import type { PlayerRole } from "./PlayerRole";
 
 export default interface PlayerProfile {
 
-    // Unique identifier
+    // ==========================
+    // Identity
+    // ==========================
+
     id: number;
 
-    // Identity
     firstName: string;
+
     lastName: string;
 
-    // Career Information
     age: number;
+
     country: string;
 
+    // ==========================
     // Physical Information
-    height: number;      // centimeters
-    weight: number;      // kilograms
+    // ==========================
 
+    height: number;      // cm
+
+    weight: number;      // kg
+
+    dominantHand: "LEFT" | "RIGHT";
+
+    // ==========================
     // Team Information
-    jerseyNumber: number;
+    // ==========================
 
-    // Gameplay
     role: PlayerRole;
 
-    // Career Progression
+    jerseyNumber: number;
+
+    // ==========================
+    // Career Information
+    // ==========================
+
+    potential: number;
+
     experience: number;
+
     reputation: number;
+
     marketValue: number;
 
-    // Core Attributes
+    // ==========================
+    // Gameplay
+    // ==========================
+
     attributes: PlayerAttributes;
 
 }
