@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import Vector2 from "../types/Vector2";
+import type MovementInput from "../types/MovementInput";
 
 export default class InputManager {
 
@@ -29,26 +29,20 @@ export default class InputManager {
         };
     }
 
-    public getMovement(): Vector2 {
+    public getMovement(): MovementInput {
 
-        const movement = new Vector2();
+        return {
 
-        if (this.keys.left.isDown) {
-            movement.x -= 1;
-        }
+            forward:
+                Number(this.keys.right.isDown) -
+                Number(this.keys.left.isDown),
 
-        if (this.keys.right.isDown) {
-            movement.x += 1;
-        }
+            sideways:
+                Number(this.keys.down.isDown) -
+                Number(this.keys.up.isDown)
 
-        if (this.keys.up.isDown) {
-            movement.y -= 1;
-        }
+        };
 
-        if (this.keys.down.isDown) {
-            movement.y += 1;
-        }
-
-        return movement.normalize();
     }
+
 }

@@ -2,9 +2,9 @@ const PlayerConstants = {
 
     MAX_SPEED: 250,
 
-    ACCELERATION: 900,
+    ACCELERATION: 8,
 
-    FRICTION: 1200
+    SPRINT_MULTIPLIER: 1.4
 
 };
 

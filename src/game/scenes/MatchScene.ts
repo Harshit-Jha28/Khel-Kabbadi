@@ -4,6 +4,7 @@ import CourtRenderer from "../renderers/CourtRenderer";
 import Player from "../objects/Player";
 import InputManager from "../input/InputManager";
 import PlayerController from "../controllers/PlayerController";
+import TeamSide from "../enums/TeamSide";
 
 export default class MatchScene extends Phaser.Scene {
 
@@ -28,14 +29,18 @@ export default class MatchScene extends Phaser.Scene {
 
         this.controller = new PlayerController(
             player,
-            input
+            input,
+            TeamSide.LEFT
         );
 
-    }
+    } // <-- You were missing this
 
-    update(): void {
+    update(
+        _time: number,
+        delta: number
+    ): void {
 
-        this.controller.update();
+        this.controller.update(delta);
 
     }
 
